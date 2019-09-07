@@ -1,0 +1,17 @@
+CREATE database hidroapp;
+
+use hidroapp;
+
+CREATE TABLE user(
+id INT AUTO_INCREMENT NOT NULL,
+email VARCHAR(60),
+local VARCHAR(60),
+agua VARCHAR(60),
+quant VARCHAR(60),
+telefone VARCHAR(16),
+PRIMARY KEY(id)
+) engine = innodb;
+
+
+INSERT INTO user (email, local, agua, quant, telefone)VALUES
+ ('ifsp.neemiasb@gmail.com','itapetininga','20','4','15996195955');
