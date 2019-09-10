@@ -35,7 +35,7 @@ function visualizar($id) {
 function adicionar() {
     if (ehPost()) {
         extract($_POST);
-        $msgRetorno = insertProduct($local, $agua, $quant, $telefone, $email);
+        $msgRetorno = insertProduct($local, $agua, $quant, $cultura, $telefone, $email);
         redirecionar("./");
     } else {
         exibir("produto/formulario");
@@ -48,7 +48,7 @@ function adicionar() {
 function editar($id) {
     if (ehPost()) {
         extract($_POST);
-        $msgRetorno = updateDataProduct($local, $agua, $quant, $telefone, $email, $id);
+        $msgRetorno = updateDataProduct($local, $agua, $quant, $cultura, $telefone, $email, $id);
         redirecionar("./");
     } else {
         $dados['produto'] = getOneProduct($id);

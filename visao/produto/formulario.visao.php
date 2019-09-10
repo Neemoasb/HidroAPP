@@ -16,37 +16,44 @@
 
         <form class="form-horizontal" action="" method="post" >
             <div class="form-group">
-                <label for="codCategoria" class=" control-label">Dados sobre a Hidroponica</label>
+                <label for="form" class=" control-label">Dados sobre a Hidroponica</label>
             </div>
             <div class="form-group">
-                <label for="nomeProduto" class="control-label">Nome da cidade: (Cidade)</label>
+                <label for="cidade" class="control-label">Nome da cidade: (Cidade)</label>
                 <div>
-                    <input type="text" class="form-control" name="local" id="local" placeholder="Insira a sua cidade" value="<?= @ $produto['local'] ?>">
+                      <?php require "./bibliotecas/listaCidades.php"; ?>
                 </div>
             </div>
             <div class="form-group">
-                <label for="precoProduto" class="control-label">Quantidade de Agua inserida</label>
+                <label for="agua" class="control-label">Quantidade de Agua inserida</label>
                 <div >
                     <input type="number" class="form-control" name="agua" id="agua" placeholder="Quantidade de agua colocada (em litros)" value="<?= @ $produto['agua'] ?>">
                 </div>
             </div>
 
             <div class="form-group">
-                <label for="estoque" class="control-label">Quantidade de plantas Inseridas</label>
+                <label for="planta" class="control-label">Quantidade de plantas Inseridas</label>
                 <div>
                     <input type="number" class="form-control" name="quant" id="quant" placeholder="Quantidade de mudas colocadas" value="<?= @ $produto['quant'] ?>">
                 </div>
             </div>
 
             <div class="form-group">
-                <label for="estoque" class="control-label">Telefone do usuario</label>
+                <label for="cultura" class="control-label">Tipo de planta a ser produzida</label>
+                <div>
+                    <?php require "./bibliotecas/listaCulturas.php"; ?>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="usuario" class="control-label">Telefone do usuario</label>
                 <div>
                     <input type="number" class="form-control" name="telefone" id="telefone" placeholder="Quantidade de mudas colocadas" value="<?= @ $produto['telefone'] ?>">
                 </div>
             </div>
 
             <div class="form-group">
-                <label for="estoque" class="control-label">Email do usuario</label>
+                <label for="email" class="control-label">Email do usuario</label>
                 <div>
                     <input type="email" class="form-control" name="email" id="email" placeholder="Insira seu email" value="<?= @ $produto['email'] ?>">
                 </div>

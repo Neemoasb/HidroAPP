@@ -8,6 +8,7 @@ email VARCHAR(60),
 local VARCHAR(60),
 agua VARCHAR(60),
 quant VARCHAR(60),
+cultura VARCHAR(60),
 telefone VARCHAR(16),
 PRIMARY KEY(id)
 ) engine = innodb;

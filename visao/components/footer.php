@@ -5,6 +5,7 @@
 		</div>
 		<div class="copyright-footer col-lg-12">
 			<span class="col-lg-10 text-center"><h6 class="text-center">©Todos os direitos reservados: Matheus Kainan, Fabricio Kitazawa e Neemiasb Borges.</h6></span>
+			<hr>
 			<h5 class="text-center">HidroApp - 2019s</h5>
 		</div>
 	</div>

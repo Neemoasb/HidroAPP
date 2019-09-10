@@ -14,9 +14,9 @@
 
   <!-- Nav Item - Dashboard -->
   <li class="nav-item active">
-    <a class="nav-link" href="">
+    <a class="nav-link" href="./">
       <i class="fas fa-fw fa-tachometer-alt"></i>
-      <span>Visão Geral</span></a>
+      <span>Dashboard</span></a>
   </li>
 
   <!-- Divider -->
@@ -37,7 +37,12 @@
       <div class="bg-white py-2 collapse-inner rounded">
         <h6 class="collapse-header">Costumização da Placa</h6>
         <a class="collapse-item" href="./produto/adicionar">Configurar Placa</a>
+        <?php
+        if (!empty($produtos)){
+          ?>
         <a class="collapse-item" href="./produto/editar/<?php echo $produto['id'] ?>">Editar Configurações</a>
+      <?php }
+        ?>
       </div>
     </div>
   </li>

@@ -1,6 +1,4 @@
 
-
-
 <?php
 if (!empty($produtos)) {
  foreach ($produtos as $produto) {?>
@@ -82,6 +80,7 @@ if (!empty($produtos)) {
               </div>
             </div>
 
+
             <!-- Pending Requests Card Example -->
             <div class="col-xl-3 col-md-6 mb-4">
               <div class="card border-left-warning shadow h-100 py-2">
@@ -89,7 +88,7 @@ if (!empty($produtos)) {
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
                       <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Quantidades de Cilcos concluidos: </div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800"> <?php ?></div>
+                      <div class=""><div id="number"></div></div>
                     </div>
                     <div class="col-auto">
                       <i class="fas fa-comments fa-2x text-gray-300"></i>
@@ -114,14 +113,16 @@ if (!empty($produtos)) {
                     <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                       <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
                     </a>
-
                   </div>
                 </div>
                 <!-- Card Body -->
                 <div class="card-body">
-                  <div class="chart-area">
-                    <canvas id="myAreaChart"></canvas>
+                  <div class="chart-pie pt-4 pb-2">
+                  
+                        <?php include './servicos/graficos/tests/render/basic/histogram.php' ?>
+                    
                   </div>
+
                 </div>
               </div>
             </div>
@@ -168,7 +169,55 @@ if (!empty($produtos)) {
               <!-- Project Card Example -->
               <div class="card shadow mb-4">
                 <div class="card-header py-3">
-                  <h6 class="m-0 font-weight-bold text-primary">Projects</h6>
+                  <h6 class="m-0 font-weight-bold text-primary">Previsao do Tempo para: <?php echo $produto['local'] ?></h6>
+                </div>
+                <div class="card-body">
+                      <?php
+                      include ("./bibliotecas/previsao.php");
+                      consultaTempo($produto['local']);
+                      ?>
+                </div>
+              </div>
+
+              <!-- Color System -->
+
+            </div>
+
+            <div class="col-lg-6 mb-4">
+              <!-- Illustrations -->
+              <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                  <h6 class="m-0 font-weight-bold text-primary">Dicas para a produção de <?php echo $produto['cultura'] ?></h6>
+                </div>
+                <div class="card-body">
+                      <?php
+                      if($produto['cultura']=='Alface'){
+                              include './visao/dicas/alface.visao.php';
+                      } if($produto['cultura']=='Tomate'){
+                              include './visao/dicas/tomate.visao.php';
+                      } if($produto['cultura']=='Morange'){
+                              include './visao/dicas/morango.visao.php';
+                      } if($produto['cultura']=='Flores'){
+                              include './visao/dicas/flores.visao.php';
+                      } if($produto['cultura']=='Feijao vagem'){
+                              include './visao/dicas/feijao.visao.php';
+                      } if($produto['cultura']=='Melao'){
+                              include './visao/dicas/melao.visao.php';
+                      }?>
+
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+
+            <!-- Content Column -->
+            <div class="col-lg-6 mb-4">
+
+              <!-- Project Card Example -->
+              <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                  <h6 class="m-0 font-weight-bold text-primary">Possiveis problemas na produção de <?php echo $produto['cultura'] ?></h6>
                 </div>
                 <div class="card-body">
 
@@ -184,13 +233,15 @@ if (!empty($produtos)) {
               <!-- Illustrations -->
               <div class="card shadow mb-4">
                 <div class="card-header py-3">
-                  <h6 class="m-0 font-weight-bold text-primary">Illustrations</h6>
+                  <h6 class="m-0 font-weight-bold text-primary">Log de Atividades</h6>
                 </div>
                 <div class="card-body">
 
                 </div>
               </div>
             </div>
+          </div>
+
           <?php
         }
       } else { ?>
@@ -199,7 +250,7 @@ if (!empty($produtos)) {
       </main>
          <?php
               }?>
-          </div>
+
           <?php require "visao/components/footer.php"; ?>
         </div>
       </div>
@@ -224,8 +275,8 @@ if (!empty($produtos)) {
           Como é uma versão beta do app, ainda não conseguimos arrumar um bug de sobrescrever dados de usuarios. se Sair provavelmente seus dados serão perdidos
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-success" data-dismiss="modal">Não, Quero ficar</button>
-          <a class="btn btn-danger" href="./login/logout/<?php echo $produto['id'] ?>" role="button">Sim, Desejo Sair</a
+          <button type="button" class="btn btn-outline-success" data-dismiss="modal">Não, Quero ficar</button>
+          <a class="btn btn-outline-danger" href="./login/logout/<?php echo $produto['id'] ?>" role="button">Sim, Desejo Sair</a
         </div>
       </div>
     </div>

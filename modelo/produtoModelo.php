@@ -3,9 +3,9 @@
 require_once "bibliotecas/mysqli.php";
 
 
-function insertProduct($local, $agua, $quant, $telefone, $email){
-    $insert = "INSERT INTO user (local, agua, quant, telefone, email)
-    VALUES ('$local', '$agua','$quant', '$telefone', '$email'); ";
+function insertProduct($local, $agua, $quant, $cultura, $telefone, $email){
+    $insert = "INSERT INTO user (local, agua, quant, cultura, telefone, email)
+    VALUES ('$local', '$agua','$quant', '$cultura', '$telefone', '$email'); ";
 
     $cons = mysqli_query($cnx = conexao(), $insert);
 
