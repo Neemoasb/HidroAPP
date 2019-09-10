@@ -117,10 +117,12 @@ if (!empty($produtos)) {
                 </div>
                 <!-- Card Body -->
                 <div class="card-body">
-                  <div class="chart-pie pt-4 pb-2">
-                  
-                        <?php include './servicos/graficos/tests/render/basic/histogram.php' ?>
-                    
+                    <canvas id="barras" width="400" height="400"></canvas>
+
+                  <div class="mt-4 text-center small">
+                    <span class="mr-2">
+                      <i class="fas fa-circle text-success"></i> Tabela de relação entre Agua x Planta
+                    </span>
                   </div>
 
                 </div>
@@ -141,18 +143,16 @@ if (!empty($produtos)) {
                 </div>
                 <!-- Card Body -->
                 <div class="card-body">
-                  <div class="chart-pie pt-4 pb-2">
-                    <canvas id="myPieChart"></canvas>
-                  </div>
+                    <canvas id="radarchart" width="400" height="400"></canvas>
                   <div class="mt-4 text-center small">
                     <span class="mr-2">
-                      <i class="fas fa-circle text-primary"></i> Agua
+                      <i class="fas fa-circle text-primary"></i> Segunda
                     </span>
                     <span class="mr-2">
-                      <i class="fas fa-circle text-success"></i> Plantas
+                      <i class="fas fa-circle text-success"></i> Terça
                     </span>
                     <span class="mr-2">
-                      <i class="fas fa-circle text-info"></i> Tarefas
+                      <i class="fas fa-circle text-info"></i> Quarta
                     </span>
                   </div>
                 </div>
@@ -254,8 +254,6 @@ if (!empty($produtos)) {
           <?php require "visao/components/footer.php"; ?>
         </div>
       </div>
-    </div>
-  </div>
 
 
 
