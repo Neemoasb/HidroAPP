@@ -4,6 +4,7 @@ if (!empty($produtos)) {
  foreach ($produtos as $produto) {?>
 
   <!-- Page Wrapper -->
+
   <div id="wrapper">
 
     <!-- Sidebar -->
@@ -11,12 +12,24 @@ if (!empty($produtos)) {
 
 
         <div class="container">
+          <?php if($produto['agua']<='0'){
+            ?>
+
+        <div class="alert alert-danger" role="alert">
+          Troca de agua urgente! <a href="./produto/editar/<?php echo $produto['id'] ?>" class="alert-link">clique aqui para voltar</a>.
+        </div>
+
+            <?php
+          }?>
 
           <div class="d-sm-flex align-items-center justify-content-between mb-4 mt-3">
             <h1 class="h3 mb-0 text-gray-800">Logado como:  <?php echo $produto['email'] ?></h1>
 
             <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal">
               Sair
+            </button>
+            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#">
+              Gerar relatorio
             </button>
 
           </div>
@@ -60,14 +73,14 @@ if (!empty($produtos)) {
                 <div class="card-body">
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Tarefas Feitas</div>
+                      <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Tarefas </div>
                       <div class="row no-gutters align-items-center">
                         <div class="col-auto">
-                          <div class="h6 mb-3 mr-3 font-weight-bold text-gray-800">Proxima Colheita em: %</div>
+                          <div class="h6 mb-3 mr-3 font-weight-bold text-gray-800">Proxima Troca de agua em: </div>
                         </div>
                         <div class="col">
                           <div class="progress progress-sm mr-2">
-                            <div class="progress-bar bg-info" role="progressbar" style="width:<?php echo $produto['quant'] ?>" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                            <div class="progress-bar bg-info" role="progressbar" style="width:<?php echo $produto['agua'] ?>" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
                           </div>
                         </div>
                       </div>
@@ -87,8 +100,8 @@ if (!empty($produtos)) {
                 <div class="card-body">
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Quantidades de Cilcos concluidos: </div>
-                      <div class=""><div id="number"></div></div>
+                      <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Tempo de execuxão: </div>
+                      <div class=""><h6 id="number"></h6></div>
                     </div>
                     <div class="col-auto">
                       <i class="fas fa-comments fa-2x text-gray-300"></i>
@@ -108,7 +121,7 @@ if (!empty($produtos)) {
               <div class="card shadow mb-4">
                 <!-- Card Header - Dropdown -->
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                  <h6 class="m-0 font-weight-bold text-primary">Grafico (mes)</h6>
+                  <h6 class="m-0 font-weight-bold text-primary">Grafico uso de agua</h6>
                   <div class="dropdown no-arrow">
                     <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                       <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
@@ -134,7 +147,7 @@ if (!empty($produtos)) {
               <div class="card shadow mb-4">
                 <!-- Card Header - Dropdown -->
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                  <h6 class="m-0 font-weight-bold text-primary">Revenue Sources</h6>
+                  <h6 class="m-0 font-weight-bold text-primary">Dados</h6>
                   <div class="dropdown no-arrow">
                     <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                       <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>

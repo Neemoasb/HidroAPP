@@ -53,13 +53,13 @@
                 label: 'Numero de uso',
                 data: [<?php echo $produto['quant'];?>, <?php echo $produto['agua'];?>],
                 backgroundColor: [
-                    'rgba(255, 99, 132, 0.2)',
+                    'rgb(61, 206, 61, 0.2)',
                     'rgba(54, 162, 235, 0.2)'
 
 
                 ],
                 borderColor: [
-                    'rgba(255, 99, 132, 1)',
+                    'rgb(0, 128, 0, 1)',
                     'rgba(54, 162, 235, 1)'
 
                 ],
@@ -76,24 +76,31 @@
             }
         }
       });
-
+      var n = 0;
+  var l = document.getElementById("number");
+  window.setInterval(function(){
+    l.innerHTML = n;
+    n++;
+  },1000);
       var ctx = document.getElementById('radarchart').getContext('2d');
       var myChart = new Chart(ctx, {
         type: 'doughnut',
         data: {
-            labels: ['Planta (Unidade)', 'Agua (Litros)'],
+            labels: ['Planta', 'Agua (L)', 'Nutrientes (L)', 'Temperatura (C°)'],
             datasets: [{
-                label: 'Numero de uso',
-                data: [<?php echo $produto['quant'];?>, <?php echo $produto['agua'];?>],
+                data: [<?php echo $produto['quant'];?>, <?php echo $produto['agua'];?>, (<?php echo $produto['agua'];?>/10),27],
                 backgroundColor: [
-                    'rgba(255, 99, 132, 0.2)',
-                    'rgba(54, 162, 235, 0.2)'
-
+                    'rgb(61, 206, 61, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(251, 188, 5, 0.2)',
+                    'rgba(249, 70, 4,0.2)'
 
                 ],
                 borderColor: [
-                    'rgba(255, 99, 132, 1)',
-                    'rgba(54, 162, 235, 1)'
+                    'rgb(61, 206, 61,1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(251, 188, 5, 1)',
+                    'rgba(249, 70, 4, 1)'
 
                 ],
                 borderWidth: 2
@@ -109,6 +116,7 @@
             }
         }
       });
+
 
 
       </script>

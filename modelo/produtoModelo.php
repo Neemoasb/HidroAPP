@@ -29,11 +29,6 @@ function deletarLogout($id){
 
 
 
-/**
- *
-  Read
- *
- * */
 
 function getAllProducts() {
     $command = "SELECT * FROM user";
@@ -112,9 +107,9 @@ function getOneProduct($filterID) {
 //   Update
 //  *
 //  * */
-function updateDataProduct($local, $agua, $quant, $telefone, $email, $id) {
+function updateDataProduct($local, $agua, $quant, $cultura, $telefone, $email, $id) {
 
-    $update = "UPDATE user SET local = '$local',agua = '$agua',quant = '$quant',telefone = '$telefone',email = '$email' WHERE id = $id";
+    $update = "UPDATE user SET local = '$local',agua = '$agua',quant = '$quant',cultura = '$cultura', telefone = '$telefone',email = '$email' WHERE id = $id";
     $update = mysqli_query(conexao(), $update);
 
     if (!$update) {
