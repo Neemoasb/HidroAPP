@@ -7,7 +7,7 @@
 	<option value="Bananal">Bananal</option>
 	<option value="Botucatu">Botucatu</option>
 	<option value="Brotas">Brotas </option>
-	<option value="Eldorado">Eldorado</option>
+	<option value="Angatuba">Angatuba</option>
 	<option value="Holambra">Holambra</option>
 	<option value="Itararé">Itararé</option>
 </select>

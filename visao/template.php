@@ -49,6 +49,7 @@
         type: 'bar',
         data: {
             labels: ['Planta (Unidade)', 'Agua (Litros)'],
+             fontColor: 'black',
             datasets: [{
                 label: 'Numero de uso',
                 data: [<?php echo $produto['quant'];?>, <?php echo $produto['agua'];?>],
@@ -76,19 +77,25 @@
             }
         }
       });
-      var n = 0;
+
+
+  var n = 0;
   var l = document.getElementById("number");
   window.setInterval(function(){
     l.innerHTML = n;
     n++;
   },1000);
+
+
+  
       var ctx = document.getElementById('radarchart').getContext('2d');
       var myChart = new Chart(ctx, {
         type: 'doughnut',
         data: {
-            labels: ['Planta', 'Agua (L)', 'Nutrientes (L)', 'Temperatura (C°)'],
+            labels: ['Planta', 'Agua (L)', 'Nutrientes (L)'],
+             fontColor: 'black',
             datasets: [{
-                data: [<?php echo $produto['quant'];?>, <?php echo $produto['agua'];?>, (<?php echo $produto['agua'];?>/10),27],
+                data: [<?php echo $produto['quant'];?>, <?php echo $produto['agua'];?>, (<?php echo $produto['agua'];?>/10)],
                 backgroundColor: [
                     'rgb(61, 206, 61, 0.2)',
                     'rgba(54, 162, 235, 0.2)',

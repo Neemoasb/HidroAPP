@@ -80,7 +80,7 @@ if (!empty($produtos)) {
                         </div>
                         <div class="col">
                           <div class="progress progress-sm mr-2">
-                            <div class="progress-bar bg-info" role="progressbar" style="width:<?php echo $produto['agua'] ?>" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                            <div class="progress-bar bg-info" role="progressbar" style="width:<?php echo ($produto['quant'] - $produto['agua']);?>" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
                           </div>
                         </div>
                       </div>
@@ -129,14 +129,10 @@ if (!empty($produtos)) {
                   </div>
                 </div>
                 <!-- Card Body -->
-                <div class="card-body">
+                <div class="card-body ">
                     <canvas id="barras" width="400" height="400"></canvas>
 
-                  <div class="mt-4 text-center small">
-                    <span class="mr-2">
-                      <i class="fas fa-circle text-success"></i> Tabela de relação entre Agua x Planta
-                    </span>
-                  </div>
+
 
                 </div>
               </div>
@@ -159,44 +155,34 @@ if (!empty($produtos)) {
                     <canvas id="radarchart" width="400" height="400"></canvas>
                   <div class="mt-4 text-center small">
                     <span class="mr-2">
-                      <i class="fas fa-circle text-primary"></i> Segunda
-                    </span>
-                    <span class="mr-2">
-                      <i class="fas fa-circle text-success"></i> Terça
-                    </span>
-                    <span class="mr-2">
-                      <i class="fas fa-circle text-info"></i> Quarta
+                      <i class="fas fa-circle text-primary"></i> Nutrientes a serem usados
                     </span>
                   </div>
                 </div>
               </div>
+
+            <div class="card shadow mt-2">
+              <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">Previsao do Tempo para: <?php echo $produto['local'] ?></h6>
+              </div>
+              <div class="card-body">
+                    <?php
+                    include ("./bibliotecas/previsao.php");
+                    consultaTempo($produto['local']);
+                    ?>
+                    <div class="mt-4 text-center small">
+                      <span class="mr-2">
+                        <i class="fas fa-circle text-primary"></i> Temperatura ideal para  <?php echo $produto['cultura'] ?>
+                      </span>
+                    </div>
+              </div>
+            </div>
             </div>
           </div>
 
           <!-- Content Row -->
           <div class="row">
-
-            <!-- Content Column -->
-            <div class="col-lg-6 mb-4">
-
-              <!-- Project Card Example -->
-              <div class="card shadow mb-4">
-                <div class="card-header py-3">
-                  <h6 class="m-0 font-weight-bold text-primary">Previsao do Tempo para: <?php echo $produto['local'] ?></h6>
-                </div>
-                <div class="card-body">
-                      <?php
-                      include ("./bibliotecas/previsao.php");
-                      consultaTempo($produto['local']);
-                      ?>
-                </div>
-              </div>
-
-              <!-- Color System -->
-
-            </div>
-
-            <div class="col-lg-6 mb-4">
+            <div class="col-lg-6 mb-6">
               <!-- Illustrations -->
               <div class="card shadow mb-4">
                 <div class="card-header py-3">
@@ -221,11 +207,7 @@ if (!empty($produtos)) {
                 </div>
               </div>
             </div>
-          </div>
-          <div class="row">
-
-            <!-- Content Column -->
-            <div class="col-lg-6 mb-4">
+            <div class="col-lg-6 mb-6">
 
               <!-- Project Card Example -->
               <div class="card shadow mb-4">
@@ -233,13 +215,29 @@ if (!empty($produtos)) {
                   <h6 class="m-0 font-weight-bold text-primary">Possiveis problemas na produção de <?php echo $produto['cultura'] ?></h6>
                 </div>
                 <div class="card-body">
-
+                  <?php
+                  if($produto['cultura']=='Alface'){
+                          include './visao/problemas/alface.problema.visao.php';
+                  } if($produto['cultura']=='Tomate'){
+                          include './visao/problemas/tomate.problema.visao.php';
+                  } if($produto['cultura']=='Morange'){
+                          include './visao/problemas/morango.problema.visao.php';
+                  } if($produto['cultura']=='Flores'){
+                          include './visao/problemas/flores.problema.visao.php';
+                  } if($produto['cultura']=='Feijao vagem'){
+                          include './visao/problemas/feijao.problema.visao.php';
+                  } if($produto['cultura']=='Melao'){
+                          include './visao/problemas/melao.problema.visao.php';
+                  }?>
                 </div>
               </div>
-
-              <!-- Color System -->
-
             </div>
+
+
+          </div>
+        
+
+            <!-- Content Column -->
 
             <div class="col-lg-6 mb-4">
 
@@ -253,7 +251,7 @@ if (!empty($produtos)) {
                 </div>
               </div>
             </div>
-          </div>
+          
 
           <?php
         }

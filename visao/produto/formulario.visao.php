@@ -48,7 +48,7 @@
             <div class="form-group">
                 <label for="usuario" class="control-label">Telefone do usuario</label>
                 <div>
-                    <input type="number" class="form-control" name="telefone" id="telefone" placeholder="Quantidade de mudas colocadas" value="<?= @ $produto['telefone'] ?>">
+                    <input type="number" class="form-control" name="telefone" id="telefone" placeholder="Insira o seu Telefone" value="<?= @ $produto['telefone'] ?>">
                 </div>
             </div>
 
