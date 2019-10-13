@@ -30,7 +30,7 @@
         (20 a 24 °C). No entanto, já foi relatada sua ocorrência no Estado de Pernambuco, onde as temperaturas médias são comumente elevadas.
         O fungo sobrevive no solo por mais de oito anos por meio de microescleródios e infecta mais de 200 hospedeiras. Como medidas de manejo,
         recomenda-se plantar cultivares resistentes e fazer rotação da cultura com gramíneas.
-        <li><b>Pinta-preta<b>
+        <li><b>Pinta-preta</b>
      </li>Esta doença afeta toda a parte aérea da planta, a partir das folhas mais velhas e próximas ao solo. Na folha,
       a doença caracteriza-se pela presença de manchas grandes, escuras,
       circulares, com anéis concêntricos (Figura 6). O ataque severo provoca
@@ -40,7 +40,7 @@
       outras hortaliças como a batata e a berinjela, além de plantas invasoras como o juá-de-capote. A doença
       é também transmitida por sementes.Não existem cultivares comerciais resistentes. Deve-se pulverizar preventivamente com os fungicidas
        registrados para essa doença. Recomenda-se, também, incorporar os restos culturais imediatamente após a última colheita e fazer rotação de cultura com gramíneas.
-       <li><b>Podridão-de-esclerócio<b>
+       <li><b>Podridão-de-esclerócio</b>
          Plantas doentes apresentam uma podridão mole e aquosa, principalmente nas folhas, hastes e frutos,
           que ficam em contato direto com o solo (Figura 9). Em condições de alta umidade,
          há um crescimento micelial muito vigoroso, de cor branca, semelhante a fios de algodão, na superfície dos

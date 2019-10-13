@@ -1,0 +1,18 @@
+{
+  "name": "PJI",
+  "short_name": "hidroapp",
+  "theme_color": "#1cc88a",
+  "background_color": "#1cc88a",
+  "display": "standalone",
+  "scope": "/",
+  "start_url": "/?utm_source=homescreen",
+  "lang": "pt-BR",
+  "orientation": "any",
+  "icons": [
+    {
+      "src": "/publico/img/icons/favicon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

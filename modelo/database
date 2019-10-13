@@ -1,4 +1,5 @@
 CREATE database hidroapp;
+//use apenas esse codigo
 
 use hidroapp;
 
@@ -12,6 +13,16 @@ cultura VARCHAR(60),
 telefone VARCHAR(16),
 PRIMARY KEY(id)
 ) engine = innodb;
+
+
+//use apenas esse codigo
+
+
+
+
+
+
+
 
 
 INSERT INTO user (email, local, agua, quant, telefone)VALUES
