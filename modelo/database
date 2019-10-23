@@ -1,6 +1,4 @@
 CREATE database hidroapp;
-//use apenas esse codigo
-
 use hidroapp;
 
 CREATE TABLE user(

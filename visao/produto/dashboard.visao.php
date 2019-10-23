@@ -129,8 +129,10 @@ if (!empty($produtos)) {
                   </div>
                 </div>
                 <!-- Card Body -->
-                <div class="card-body ">
-                    <canvas id="barras" width="400" height="400"></canvas>
+                <div class="card-body mx-auto">
+
+
+                    <canvas id="barras" width="500" height="700"></canvas>
 
 
 
@@ -177,11 +179,34 @@ if (!empty($produtos)) {
                     </div>
               </div>
             </div>
+</div>
+<div class="row m-auto">
+<div class="col-6" >
+            <div class="card shadow mt-2">
+              <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">Temperatura</h6>
+              </div>
+              <div class="card-body">
+                  <iframe class="m-auto" width="450" height="260" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/891821/charts/1?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&title=Temperatura&type=line"></iframe>
+
+              </div>
             </div>
-          </div>
+</div>
+<div class="col-6">
+            <div class="card shadow mt-2">
+              <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">Humidade</h6>
+              </div>
+              <div class="card-body">
+                  <iframe class="m-auto" width="450" height="260" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/891821/charts/2?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&title=Umidade&type=line"></iframe>
+              </div>
+            </div>
+
+</div>
+  </div>
 
           <!-- Content Row -->
-          <div class="row">
+          <div class="row mt-3">
             <div class="col-lg-6 mb-6">
               <!-- Illustrations -->
               <div class="card shadow mb-4">
@@ -235,7 +260,7 @@ if (!empty($produtos)) {
 
 
           </div>
-        
+
 
             <!-- Content Column -->
 
@@ -251,7 +276,7 @@ if (!empty($produtos)) {
                 </div>
               </div>
             </div>
-          
+
 
           <?php
         }
